@@ -70,7 +70,7 @@
 		$(document).click(function(e){
 			var claseIdentificadora = e.target.parentElement;
 				claseIdentificadora = claseIdentificadora.parentElement.className;
-				if(claseIdentificadora != "mostrarMas"){
+				if(claseIdentificadora != "mostrarMas" && claseIdentificadora.indexOf("image") === -1){
 					var count = 0;
 					$('.mostrarInfoH').each(function(){
 						if( $(this).hasClass("show") )
