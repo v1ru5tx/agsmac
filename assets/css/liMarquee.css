@@ -94,7 +94,7 @@
 .mostrarInfoH .content {
     position: fixed !important;
     top: 10% !important;
-    left: 0% !important;
+    left: -25% !important;
     transition: 2s;
     -moz-transition: left 0.2s ease-in-out;
     -moz-transition: opacity 1s ease-in-out;
@@ -152,27 +152,11 @@
     display: none;
 }
 
-@media(min-width:1350px ) {
-    .show .content {
-        transition: 2s;
-        left: 35% !important;
-    }
-}
 
-@media(max-width:1349px ) {
-    .show .content {
-        transition: 2s;
-        left: 33% !important;
-    }
+.show .content {
+    transition: 2s;
+    left: calc(50vw - 240px)!important; 
 }
-
-@media(max-width:1270px ) {
-    .show .content {
-        transition: 2s;
-        left: 30% !important;
-    }
-}
-
 
 .mostrarInfoH .hidden, .mostrarInfoH.preview {
     -moz-transition: background 0.2s ease-in-out, height 1s ease-in-out;
