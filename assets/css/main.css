@@ -533,7 +533,7 @@ a.green {
 		}
 
 	h2 {
-		font-size: 1.75em;
+		font-size: 3em;
 	}
 
 	h3 {
@@ -1760,8 +1760,6 @@ a.green {
 		#main .inner {
 			max-width: 100%;
 		}
-
-/* Footer */
 
 	#footer {
 		-moz-transition: bottom 0.2s ease;
