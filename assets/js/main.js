@@ -14,7 +14,6 @@
 	});
 
 	$(function() {
-
 		// Este arreglo tendra el registro de todos los divs emergentes
 		// que hayan sido clickeados.
 		// Aqui solo debe de albergar uno
@@ -66,13 +65,17 @@
 
 		});
 
+		// Inicializamos algunas cosas
+
 
 		$(document).click(function(e){
 			var claseIdentificadora = e.target.parentElement;
 				claseIdentificadora = claseIdentificadora.parentElement.className;
 				if(claseIdentificadora != "mostrarMas"
 					&& claseIdentificadora.indexOf("right") === -1
-					&& claseIdentificadora.indexOf("left") === -1){
+					&& claseIdentificadora.indexOf("left") === -1
+					&& claseIdentificadora.indexOf("content") === -1
+					&& claseIdentificadora.indexOf("tabcontent") != -1){
 					var count = 0;
 					$('.mostrarInfoH').each(function(){
 						if( $(this).hasClass("show") )
@@ -127,6 +130,60 @@
 
 		});
 
-	});
+		// Declararemos una funcion que nos ayudará a mostrar el content.
+		$(".leftArrow").click(function () {
+			// Primero tenemos que obtener el padre para obtener toda la info y manipularla
+			$(this).animate({
+				height:'15px',
+				width:'25px'
+			}, 100);
+			var info = $(this).siblings('.contenido').children('div');
+			var contador = 0;
+			info.each(function(){
+				if( $(this).is(':visible') ){
+					$(this).hide();
+					if( contador === 0 ){
+						contador = info.length-1;
+					} else {
+						--contador;
+					}
+					$(info[contador]).show();
+					return false;
+				}
+				contador++;
+			});
+			$(this).animate({
+				height:'25px',
+				width:'30px'
+			}, 100);
+		});
 
+		// Declararemos una funcion que nos ayudará a mostrar el content.
+		$(".rigthArrow").click(function () {
+			$(this).animate({
+				height:'15px',
+				width:'25px'
+			}, 100);
+			// Primero tenemos que obtener el padre para obtener toda la info y manipularla
+			var info = $(this).siblings('.contenido').children('div');
+			var contador = 0;
+			info.each(function(){
+				contador++;
+				if( $(this).is(':visible') ){
+					$(this).hide();
+					if( contador === info.length ){
+						contador = 0;
+					}
+					console.log(contador);
+					$(info[contador]).show();
+					return false;
+				}
+			});
+			$(this).animate({
+				height:'25px',
+				width:'30px'
+			}, 100);
+		});
+
+	});
 })(jQuery);

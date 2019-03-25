@@ -102,8 +102,8 @@
     -ms-transition: opacity 1s ease-in-out;
     transition: opacity 1s ease-in-out;
     border-radius: 100%;
-    width: 35em;
-    height: 35em;
+    width: 40vw;
+    height: 40vw;
     padding: 4em;
     text-align: center;
     cursor: default;
@@ -141,6 +141,19 @@
     display: block !important;
 }
 
+.show .interno img{
+    position: absolute;
+    top: 50%;
+}
+
+.show .interno img:nth-of-type(1){
+    left: 0px;
+}
+
+.show .interno img:nth-of-type(2){
+    right: 0px;
+}
+
 .mostrarInfoH .show {
     transition: 2s;
     left: 35% !important;
@@ -155,7 +168,7 @@
 
 .show .content {
     transition: 2s;
-    left: calc(50vw - 240px)!important; 
+    left: 30vw !important;
 }
 
 .mostrarInfoH .hidden, .mostrarInfoH.preview {
@@ -267,4 +280,38 @@
     background: #996633;
     color: white;
     font-size: 1.2em;
+}
+
+/*Estilo para las tabs*/
+.tab{
+    padding-top: 7vw;
+    border: none;
+}
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #B3C807;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #DFF90A;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 100px 12px;
+    border-top: none;
 }
