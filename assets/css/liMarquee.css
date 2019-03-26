@@ -284,34 +284,78 @@
 
 /*Estilo para las tabs*/
 .tab{
-    padding-top: 7vw;
+    padding-top: 5vw;
     border: none;
+    align-items: center;
 }
 
-.tab button {
-    background-color: inherit;
+.tab>button{
+    width: 33%;
+}
+
+
+.tab > button {
     float: left;
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 14px 16px;
     transition: 0.3s;
     font-size: 17px;
 }
 
-/* Change background color of buttons on hover */
-.tab button:hover {
-    background-color: #B3C807;
+.tab.cafe>button, .tab.negro>button{
+    background-color: #FFFFFF;
+}
+.tab.verdeOscuro>button{
+    background-color: #B8DB7C;
+}
+.tab.blanco>button{
+    background-color: #DA251D;
 }
 
-/* Create an active/current tablink class */
-.tab button.active {
-    background-color: #DFF90A;
+.tab.gacelas>button{
+    background-color: #EF473F;
+    color: #ffffff;
+}
+.tab.lobatos>button{
+    background-color: #28166F;
+    color: #ffffff;
 }
 
-/* Style the tab content */
+.tab>button:hover {
+    filter: brightness(85%);
+}
+
+.tab>button.active {
+    filter: brightness(65%);
+}
+
 .tabcontent {
     display: none;
     padding: 100px 12px;
     border-top: none;
+}
+
+#PromesaCC, #OraciónCC, #LeyNormasCC,
+#PromesaTMS, #OraciónTMS, #LeyNormasTMS{
+    color: #ffffff;
+    text-align: center;
+}
+
+
+.contenidoLargoCirculos {
+    width: 30vw;
+    height: 23vw;
+    display: none;
+    margin: 4vw 2vw;
+    overflow-y: scroll;
+}
+
+.contenidoLargoCirculos p{
+    font-size: 16px;
+    text-align: justify;
+}
+
+p.cafe, p.negro{
+    color:#ffffff;
 }
