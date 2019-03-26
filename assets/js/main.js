@@ -75,7 +75,9 @@
 					&& claseIdentificadora.indexOf("right") === -1
 					&& claseIdentificadora.indexOf("left") === -1
 					&& claseIdentificadora.indexOf("content") === -1
-					&& claseIdentificadora.indexOf("tabcontent") != -1){
+					&& claseIdentificadora.indexOf("contenedorTabs") === -1
+					&& claseIdentificadora.indexOf("contenido") === -1
+					&& claseIdentificadora.indexOf("interno") === -1){
 					var count = 0;
 					$('.mostrarInfoH').each(function(){
 						if( $(this).hasClass("show") )
