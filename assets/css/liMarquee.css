@@ -148,10 +148,14 @@
 
 .show .interno img:nth-of-type(1){
     left: 0px;
+    width: 30px;
+    height: 20px;
 }
 
 .show .interno img:nth-of-type(2){
     right: 0px;
+    width: 30px;
+    height: 20px;
 }
 
 .mostrarInfoH .show {
@@ -336,8 +340,15 @@
     border-top: none;
 }
 
+.tabcontent-small{
+    display: none;
+    padding: 80px 12px;
+    border-top: none;
+}
+
 #PromesaCC, #OraciónCC, #LeyNormasCC,
-#PromesaTMS, #OraciónTMS, #LeyNormasTMS{
+#PromesaTMS, #OraciónTMS, #LeyNormasTMS,
+#PromesaSD, #OraciónSD, #LeyNormasSD{
     color: #ffffff;
     text-align: center;
 }
@@ -351,11 +362,26 @@
     overflow-y: scroll;
 }
 
-.contenidoLargoCirculos p{
+.contenidoLargoCirculos>p,
+.contenidoLargoCirculos>ul{
     font-size: 16px;
     text-align: justify;
 }
 
-p.cafe, p.negro{
+p.cafe, p.negro, p.verde{
     color:#ffffff;
+}
+
+p.gacelas, p.lobatos, p.blanco{
+    color:#000000;
+}
+
+ul.blanca{
+    list-style: none;
+    color: #ffffff;
+}
+
+ul.negra{
+    list-style: none;
+    color: #000000;
 }
