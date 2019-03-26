@@ -141,10 +141,12 @@
     display: block !important;
 }
 
+
 img.rigthArrow, img.leftArrow{
     position: absolute;
     top: 50%;
 }
+
 
 img.leftArrow{
     left: 0px;
@@ -365,7 +367,6 @@ img.conTexto{
     position: relative !important;
     padding: 3px 10px !important;
 }
-
 .contenidoLargoCirculos>p,
 .contenidoLargoCirculos>ul{
     font-size: 16px;
