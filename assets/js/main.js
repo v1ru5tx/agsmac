@@ -37,7 +37,7 @@
 		// Fix: Placeholder polyfill.
 		$('form').placeholder();
 
-		// Prioritize "important" elements on medium.
+		// Prioritize 'important' elements on medium.
 		skel.on('+medium -medium', function() {
 			$.prioritize(
 				'.important\\28 medium\\29',
@@ -71,19 +71,19 @@
 		$(document).click(function(e){
 			var claseIdentificadora = e.target.parentElement;
 				claseIdentificadora = claseIdentificadora.parentElement.className;
-				if(claseIdentificadora != "mostrarMas"
-					&& claseIdentificadora.indexOf("right") === -1
-					&& claseIdentificadora.indexOf("left") === -1
-					&& claseIdentificadora.indexOf("content") === -1
-					&& claseIdentificadora.indexOf("contenedorTabs") === -1
-					&& claseIdentificadora.indexOf("contenido") === -1
-					&& claseIdentificadora.indexOf("interno") === -1){
+				if(claseIdentificadora != 'mostrarMas'
+					&& claseIdentificadora.indexOf('right') === -1
+					&& claseIdentificadora.indexOf('left') === -1
+					&& claseIdentificadora.indexOf('content') === -1
+					&& claseIdentificadora.indexOf('contenedorTabs') === -1
+					&& claseIdentificadora.indexOf('contenido') === -1
+					&& claseIdentificadora.indexOf('interno') === -1){
 					var count = 0;
 					$('.mostrarInfoH').each(function(){
-						if( $(this).hasClass("show") )
+						if( $(this).hasClass('show') )
 						{
-							$(this).removeClass("show");
-							$(this).addClass("hide");
+							$(this).removeClass('show');
+							$(this).addClass('hide');
 							count++;
 						}
 					});
@@ -100,10 +100,10 @@
 			enlace.click( function(){
 				// Eliminamos todos los que tengan esta cla
 				$('.mostrarInfoH').each(function(){
-					if( $(this).hasClass("show") )
+					if( $(this).hasClass('show') )
 					{
-						$(this).removeClass("show");
-						$(this).addClass("hide");
+						$(this).removeClass('show');
+						$(this).addClass('hide');
 					}
 				});
 				t.toggleClass('hide');
@@ -133,7 +133,7 @@
 		});
 
 		// Declararemos una funcion que nos ayudará a mostrar el content.
-		$(".leftArrow").click(function () {
+		$('.leftArrow').click(function () {
 			// Primero tenemos que obtener el padre para obtener toda la info y manipularla
 			$(this).animate({
 				height:'15px',
@@ -161,7 +161,7 @@
 		});
 
 		// Declararemos una funcion que nos ayudará a mostrar el content.
-		$(".rigthArrow").click(function () {
+		$('.rigthArrow').click(function () {
 			$(this).animate({
 				height:'15px',
 				width:'25px'
@@ -187,5 +187,20 @@
 			}, 100);
 		});
 
+
+
 	});
 })(jQuery);
+
+$(document).ready(function(){
+	$.ajax({
+		url: 'assets/js/json/contenidoCC.json'
+	}).done(function(data){
+		var template = $('#ccTemplate').html();
+		var html = Mustache.to_html(template, data);
+		console.log(html);
+		$('#contenedorCCInfo').html(html);
+	}).fail(function( jqXHR, textStatus, errorThrown ){
+		console.log(errorThrown);
+	});
+});
