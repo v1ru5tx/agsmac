@@ -94,7 +94,7 @@
 .mostrarInfoH .content {
     position: fixed !important;
     top: 10% !important;
-    left: -25% !important;
+    left: -50% !important;
     transition: 2s;
     -moz-transition: left 0.2s ease-in-out;
     -moz-transition: opacity 1s ease-in-out;
