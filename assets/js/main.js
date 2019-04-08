@@ -114,7 +114,8 @@ function afterIncluded(){
 			&& claseIdentificadora.indexOf("contenido") === -1
 			&& claseIdentificadora.indexOf("interno") === -1){
 			var count = 0;
-				$('.mostrarInfoH').each(function(){
+
+      $('.mostrarInfoH').each(function(){
 				if( $(this).hasClass("show") )
 				{
 					$(this).removeClass("show");
