@@ -38,7 +38,7 @@ function getAllIncludedHtml(){
 	}).then( function () {
 		setTimeout(function(){
 			afterAfterInclude();
-		}, 2000);
+		}, 1000);
 	} );
 }
 
