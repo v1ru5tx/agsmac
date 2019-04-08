@@ -114,7 +114,7 @@ function afterIncluded(){
 			&& claseIdentificadora.indexOf("contenido") === -1
 			&& claseIdentificadora.indexOf("interno") === -1){
 			var count = 0;
-			$('.mostrarInfoH').each(function(){
+				$('.mostrarInfoH').each(function(){
 				if( $(this).hasClass("show") )
 				{
 					$(this).removeClass("show");
@@ -214,6 +214,17 @@ function afterAfterInclude(){
 			height:'25px',
 			width:'30px'
 		}, 100);
+	});
+
+	$("a.detalles").click(function(e){
+		e.preventDefault();
+		if( !$('.mostrarInfoH').hasClass('show') ){
+			// Entonces no hay ningun circulo abierto,
+			// por lo que podemos abrir la nueva pagina.
+			var pagina = $(this).attr("data");
+			localStorage.setItem("page", pagina);
+			window.location.href = "detail1.html";
+		}
 	});
 }
 
